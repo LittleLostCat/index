@@ -1,0 +1,78 @@
+$(".works .myworks").mousemove(function(e){
+	var page = e.pageX,
+		wid = (itemWidth-itemWidth/16)/2,
+		stardWidth = 10*wid,
+		alstardTop,
+		ddstardTop,
+		jistardTop,
+		qustardTop,
+		tastardTop,
+		qqstardTop,
+		gastardTop,
+		aliyunleft = Math.abs($(".aliyun").offset().left - page + wid),
+		ddwkleft = Math.abs($(".ddwk").offset().left - page + wid),
+		jiyoujialeft = Math.abs($(".jiyoujia").offset().left - page + wid),
+		qunaerleft = Math.abs($(".qunaer").offset().left - page + wid),
+		taobaoleft = Math.abs($(".taobao").offset().left - page + wid),
+		qqnewsleft = Math.abs($(".qqnews").offset().left - page + wid),
+		gameleft = Math.abs($(".game").offset().left - page + wid);
+	if(stardWidth<=aliyunleft){
+		alstardTop = 0;
+	}else{
+		alstardTop = -(stardWidth-aliyunleft)/stardWidth*60
+	}
+	$(".works .myworks .aliyun").css("transform","translateY("+ alstardTop +"%)")
+
+	if(stardWidth<=ddwkleft){
+		ddstardTop = 0;
+	}else{
+		ddstardTop = -(stardWidth-ddwkleft)/stardWidth*60
+	}
+	$(".works .myworks .ddwk").css("transform","translateY("+ ddstardTop +"%)")
+
+	if(stardWidth<=jiyoujialeft){
+		jistardTop = 0;
+	}else{
+		jistardTop = -(stardWidth-jiyoujialeft)/stardWidth*60
+	}
+	$(".works .myworks .jiyoujia").css("transform","translateY("+ jistardTop +"%)")
+
+	if(stardWidth<=qunaerleft){
+		qustardTop = 0;
+	}else{
+		qustardTop = -(stardWidth-qunaerleft)/stardWidth*60
+	}
+	$(".works .myworks .qunaer").css("transform","translateY("+ qustardTop +"%)")
+
+	if(stardWidth<=taobaoleft){
+		tastardTop = 0;
+	}else{
+		tastardTop = -(stardWidth-taobaoleft)/stardWidth*60
+	}
+	$(".works .myworks .taobao").css("transform","translateY("+ tastardTop +"%)")
+
+	if(stardWidth<=qqnewsleft){
+		qqstardTop = 0;
+	}else{
+		qqstardTop = -(stardWidth-qqnewsleft)/stardWidth*60
+	}
+	$(".works .myworks .qqnews").css("transform","translateY("+ qqstardTop +"%)")
+
+	if(stardWidth<=gameleft){
+		gastardTop = 0;
+	}else{
+		gastardTop = -(stardWidth-gameleft)/stardWidth*60
+	}
+	$(".works .myworks .game").css("transform","translateY("+ gastardTop +"%)")
+	// console.log(stardTop)
+})
+.mouseleave(function(){
+	$(".works .myworks .aliyun").css("bottom",-50 +"%");
+	$(".works .myworks .ddwk").css("bottom",-40 +"%");
+	$(".works .myworks .jiyoujia").css("bottom",-60+"%");
+	$(".works .myworks .qunaer").css("bottom",-40 +"%");
+	$(".works .myworks .taobao").css("bottom",-30+"%");
+	$(".works .myworks .qqnews").css("bottom",-40+"%");
+	$(".works .myworks .game").css("bottom",-50 +"%");
+})
+console.log($(".works").offset().top);
